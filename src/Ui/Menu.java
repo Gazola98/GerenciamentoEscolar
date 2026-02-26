@@ -30,7 +30,7 @@ public class Menu {
                 case 7 -> System.out.println("Encerrando sistema...");
                 default -> System.out.println("Opção inválida!");
             }
-        } while (opcao != 6);
+        } while (opcao != 7);
     }
 
     private void mostrarMenu() {
@@ -108,7 +108,7 @@ public class Menu {
     }
 
     private void adicionarNota() {
-        System.out.println("Digite o nome do aluno: ");
+        System.out.print("Digite o nome do aluno: ");
         String nome = sc.nextLine();
 
         var pessoa = escola.buscarPorNome(nome);
@@ -123,10 +123,10 @@ public class Menu {
             return;
         }
 
-        System.out.println("Nome da matéria: ");
+        System.out.print("Nome da matéria: ");
         String materia = sc.nextLine();
 
-        System.out.println("Nota: ");
+        System.out.print("Nota: ");
         double valor = lerNumeroDouble();
 
         aluno.adicionarNota(materia, valor);

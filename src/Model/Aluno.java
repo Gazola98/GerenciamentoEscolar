@@ -34,10 +34,10 @@ public class Aluno extends Pessoa {
         System.out.println("Notas do aluno: ");
 
         for (Nota nota : notas) {
-            System.out.println("- " + nota.getNomeMateria() + ":" + nota.getValor());
+            System.out.println("- " + nota.getNomeMateria() + ": " + nota.getValor());
         }
 
-        System.out.println("Média: " + calcularMedia());
+        System.out.printf("Média: %.2f%n", calcularMedia());
         System.out.println("Situação: " + getSituacao());
     }
 
@@ -68,7 +68,7 @@ public class Aluno extends Pessoa {
 
     @Override
     public String getDescricao() {
-        return "Aluno: " + getNome() + " | Idade: " + getIdade() + " | Matrícula: " + matricula + "| Média: " + calcularMedia()
-                + "Situação: " + getSituacao();
+        return "Aluno: " + getNome() + " | Idade: " + getIdade() + " | Matrícula: " + matricula + String.format("| Média: %.2f", calcularMedia())
+                + " Situação: " + getSituacao();
     }
 }
